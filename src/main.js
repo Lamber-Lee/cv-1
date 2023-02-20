@@ -1,9 +1,9 @@
 let html = document.querySelector("#html");
 let style =document.querySelector("#style");
 let string =`
-/*你好，我是小李
-*接下来我演示一下我的前端功底
-*首先我要准备一个div
+/* 你好，我是小李
+* 接下来我演示一下我的前端功底
+* 首先我要准备一个div
 **/
 #div1{
     border: 1px solid red;
@@ -27,18 +27,16 @@ let string =`
     rgba(255,255,255,1) 50%,
     rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
 }
-/* 加两个神秘的小球
+/* 加两个神秘的小球 */
 #div1::before{
     width: 100px;
     height: 100px;
-    top: 0;   
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     background: #000;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, 
-    rgba(255,255,255,1) 25%, rgba(0,0,0,1) 25%, 
-    rgba(0,0,0,1) 100%);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 100%);
 }
 #div1::after{
     width: 100px;    
@@ -60,7 +58,7 @@ let  n = 0;
 
 let step = () => {
   setTimeout(() => {
-    n = n + 1;  
+
     if (string[n] === "\n"){
         // 如果是回车，就不照搬
         // 如果不是回车就照搬
@@ -80,7 +78,7 @@ let step = () => {
         n += 1;
         step();
     }
-},50);
+},10);
 };
 
 step();

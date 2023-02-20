@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>小李简历</title>
-    <link rel="stylesheet" href="/index.5952072d.css">
-</head>
-<body>
-    <style id="style"></style>
-   <div id="html"></div>
-   <div id="div1Wrapper"></div>
-   <div id="div1"></div>
-   
-    <script src="/index.fef1cfaf.js">// modules are defined as an array
+// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -155,12 +140,12 @@
       this[globalName] = mainExports;
     }
   }
-})({"iIm6X":[function(require,module,exports) {
+})({"l9GoM":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "4e5dac8afe405db7";
-module.bundle.HMR_BUNDLE_ID = "a31dae5e0c2f97d0";
+module.bundle.HMR_BUNDLE_ID = "803e754cfef1cfaf";
 "use strict";
 function _createForOfIteratorHelper(o, allowArrayLike) {
     var it;
@@ -469,9 +454,30 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}]},["iIm6X"], null, "parcelRequire94c2")
+},{}]},["l9GoM"], null, "parcelRequire94c2")
+let html = document.querySelector("#html");
+let style = document.querySelector("#style");
+let string = `\n/* 你好，我是小李\n* 接下来我演示一下我的前端功底\n* 首先我要准备一个div\n**/\n#div1{\n    border: 1px solid red;\n    width: 200px;\n    height: 200px;\n}\n/*接下来我把 div 变成一个八卦图\n*注意看好了\n*首先，把 div 变成一个圆\n**/\n#div1{\n    border-radius: 50%;\n    box-shadow: 0 0 3px rgba(0,0,0,0.5);\n    border: none;\n}\n/*八卦是阴阳形成的\n *一黑一白\n**/\n#div1{\n    background: linear-gradient(90deg, rgba(255,255,255,1)0%, \n    rgba(255,255,255,1) 50%,\n    rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);\n}\n/* 加两个神秘的小球 */\n#div1::before{\n    width: 100px;\n    height: 100px;\n    top: 0;\n    left: 50%;\n    transform: translateX(-50%);\n    background: #000;\n    border-radius: 50%;\n    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 100%);\n}\n#div1::after{\n    width: 100px;    \n    height: 100px;    \n    bottom: 0;   \n    left: 50%;    \n    transform: translateX(-50%);    \n    background: #fff;\n    border-radius: 50%;    \n    background: radial-gradient(circle, rgba(0,0,0,1) 0%,\n    rgba(0,0,0,1) 25%, rgba(255,255,255,1) 25%,\n    rgba(255,255,255,1) 100%, rgba(0,0,0,1) 100%);\n      }\n\n`;
+let string2 = "";
+let n = 0;
+let step = ()=>{
+    setTimeout(()=>{
+        if (string[n] === "\n") // 如果是回车，就不照搬
+        // 如果不是回车就照搬
+        string2 += "<br>";
+        else if (string[n] === " ") string2 += "&nbsp;";
+        else string2 += string[n];
+        html.innerHTML = string2;
+        style.innerHTML = string.substring(0, n);
+        window.scrollTo(0, 99999);
+        html.scrollTo(0, 99999);
+        if (n < string.length - 1) {
+            // 如果 n 不是最后一个,就继续
+            n += 1;
+            step();
+        }
+    }, 10);
+};
+step();
 
-</script>
-    
-</body>
-</html>
+//# sourceMappingURL=index.fef1cfaf.js.map
